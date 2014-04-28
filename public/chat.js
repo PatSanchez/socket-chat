@@ -11,6 +11,7 @@ window.onload = function() {
         this.loginDialog = document.getElementById('preLogin');
         this.chatScreen = document.getElementById('postLogin');
         this.userList = document.getElementById('userList');
+        this.usernameDisplay = document.getElementById('usernameDisplay');
 
         this.setNameButton.onclick = this.setName = function(){
             if(this.nameField.value === '') {
@@ -87,6 +88,9 @@ window.onload = function() {
 
             //Log In The User
             this.socket.emit('login', {username: this.nameField.value });
+            this.userInputField.focus();
+            this.usernameDisplay.innerHTML = this.nameField.value;
+            this.userInputField.style.paddingLeft = this.usernameDisplay.offsetWidth + 5 + 'px';
         }.bind(this);
 
 

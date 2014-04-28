@@ -1,2 +1,56 @@
+* {box-sizing: border-box;}
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
 .chatPart {display: none;}
 .chatPart.visible {display: block;}
+
+#appContainer, #preLogin, #postLogin {
+    height: 100%;
+}
+
+#content {
+    border: 1px inset #c3c3c3;
+    background: #efefef;
+    float: left;
+    width: 80%;
+    height: 90%;
+    padding: 1%;
+    overflow-y: auto;
+    margin-bottom: 3px;
+}
+
+#userContainer {
+    float: left;
+    width: 20%;
+}
+
+#controls {
+    clear: both;
+    padding: 5px;
+    position: relative;
+}
+
+#usernameDisplay {
+    position: absolute;
+    background: #efefef;
+    height: 30px;
+    line-height: 30px;
+    left: 1px;
+    top: 1px;
+    cursor: default;
+    z-index: 2;
+    padding: 0px 3px;
+}
+#userInput {
+    width: 80%;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#send { display: none; }
