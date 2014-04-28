@@ -4,7 +4,7 @@ var exphbs  = require('express3-handlebars');
 
 //App Setup
 var app = express();
-var port = 3700;
+var port = 80;
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');

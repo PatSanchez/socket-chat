@@ -1,6 +1,6 @@
 {
     "name": "socket-chat",
-    "version": "0.0.0",
+    "version": "0.0.0-2",
     "private": true,
     "description": "Real time web chat",
     "dependencies": {
@@ -8,5 +8,12 @@
         "express": "latest",
         "express3-handlebars": "latest"
     },
-    "author": "Pat Sanchez"
+    "author": "Pat Sanchez",
+    "subdomain": "ssm-socket-chat",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "engines": {
+        "node": "0.10.x"
+    }
 }

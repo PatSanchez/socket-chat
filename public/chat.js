@@ -30,7 +30,7 @@ window.onload = function() {
         this.nameField.focus();
 
         this.initChat = function(){
-            this.socket = io.connect('http://localhost:3700');
+            this.socket = io.connect('http://ssm-socket-chat.jit.su');
 
             //When a new userlist is sent over, repopulate the client side list
             this.socket.on('updateUsers', function(data){
