@@ -1,29 +1,31 @@
-//Libraries we will use
+//<editor-fold desc="Libraries">
 var express = require("express");
 var exphbs  = require('express3-handlebars');
+//</editor-fold>
 
-//App Setup
+//<editor-fold desc="App Setup">
 var app = express();
 var port = 80;
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+//</editor-fold>
 
-//Defining our Routes
+//<editor-fold desc="Routes">
 app.get("/", function(req, res){
     res.render('index');
 });
+//</editor-fold>
 
-//Sets the static directory for files that will be rendered to the client as is
+//<editor-fold desc="Start the App">
 app.use(express.static(__dirname + '/public'));
 
-//Starts running the app using socket.io
 var io = require('socket.io').listen(app.listen(port));
+//</editor-fold>
 
-//List of users connected to the server
+//<editor-fold desc="Application Logic">
 var users = [];
 
-//For each connection
 io.sockets.on('connection', function (socket) {
 
     //Send them a message welcoming them to the chat. Only goes to the new user (note not using io.sockets but socket)
@@ -52,3 +54,4 @@ io.sockets.on('connection', function (socket) {
         io.sockets.emit('updateUsers', users);
     });
 });
+//</editor-fold>

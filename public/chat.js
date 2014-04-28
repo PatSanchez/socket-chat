@@ -1,6 +1,7 @@
 window.onload = function() {
     var Chat = new(function() {
 
+        //<editor-fold desc="Variable Assignment">
         this.messages = [];
         this.users = '';
         this.userInputField = document.getElementById('userInput');
@@ -12,7 +13,9 @@ window.onload = function() {
         this.chatScreen = document.getElementById('postLogin');
         this.userList = document.getElementById('userList');
         this.usernameDisplay = document.getElementById('usernameDisplay');
+        //</editor-fold>
 
+        //<editor-fold desc="Pre-Connection Bindings">
         this.setNameButton.onclick = this.setName = function(){
             if(this.nameField.value === '') {
                 alert('Please type your name!');
@@ -28,11 +31,12 @@ window.onload = function() {
         }.bind(this);
 
         this.nameField.focus();
+        //</editor-fold>
 
+        //<editor-fold desc="Chat Initialization">
         this.initChat = function(){
             this.socket = io.connect('http://ssm-socket-chat.jit.su');
 
-            //When a new userlist is sent over, repopulate the client side list
             this.socket.on('updateUsers', function(data){
                 this.users = data;
                 var html = '';
@@ -94,7 +98,7 @@ window.onload = function() {
             this.usernameDisplay.innerHTML = this.nameField.value;
             this.userInputField.style.paddingLeft = this.usernameDisplay.offsetWidth + 5 + 'px';
         }.bind(this);
-
+        //</editor-fold>
 
     });
 
