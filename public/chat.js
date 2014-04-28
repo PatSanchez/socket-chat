@@ -27,6 +27,8 @@ window.onload = function() {
             }
         }.bind(this);
 
+        this.nameField.focus();
+
         this.initChat = function(){
             this.socket = io.connect('http://localhost:3700');
 
