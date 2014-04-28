@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    color: #111;
 }
 
 .chatPart {display: none;}
@@ -17,6 +18,11 @@ html, body {
     margin: 100px auto;
     padding: 1%;
     background: #efefef;
+    text-align: center;
+}
+
+#preLogin h3 {
+    margin: .5em 0;
 }
 
 #content {
