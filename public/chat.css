@@ -8,8 +8,15 @@ html, body {
 .chatPart {display: none;}
 .chatPart.visible {display: block;}
 
-#appContainer, #preLogin, #postLogin {
+#appContainer, #postLogin {
     height: 100%;
+}
+
+#preLogin {
+    max-width: 320px;
+    margin: 100px auto;
+    padding: 1%;
+    background: #efefef;
 }
 
 #content {
